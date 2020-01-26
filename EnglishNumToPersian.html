@@ -1,36 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-    <input type="number" id="number">
+  <body>
+    <input type="number" id="number" />
     <button id="btn">convert</button>
 
     <script>
-        const btn = document.getElementById('btn');
-        btn.onclick = function () {
-            let number = document.getElementById('number').value;
-            let persianNumbers = toPersianNumber(number);
-            console.log(number);
-            console.log(persianNumbers);
+      function init() {
+        const btn = document.getElementById("btn");
+        btn.onclick = function() {
+          let number = document.getElementById("number").value;
+          let persianNumbers = toPersianNumber(number);
+          console.log(number);
+          console.log(persianNumbers);
         };
 
         function toPersianNumber(n) {
-            const persianDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+          const persianDigits = [
+            "۰",
+            "۱",
+            "۲",
+            "۳",
+            "۴",
+            "۵",
+            "۶",
+            "۷",
+            "۸",
+            "۹"
+          ];
 
-            return n
-                .toString()
-                .split('')
-                .map(value => persianDigits[value])
-                .join('');
+          return n
+            .toString()
+            .split("")
+            .map(value => persianDigits[value])
+            .join("");
         }
-    </script>
-</body>
+      }
 
+      init();
+    </script>
+  </body>
 </html>
