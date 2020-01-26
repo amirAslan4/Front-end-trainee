@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    Enter number from 0 to 6 :
+    <input type="number" id="number">
+    <button id="btn">showDay</button>
+
+    <script>
+        function init() {
+            const weekDays = ['شنبه', 'یک شنبه', 'دوشنبه', 'سه شنبه', 'چهارشنبه', 'پنج شنبه', 'جمعه'];
+            const btn = document.getElementById('btn');
+            btn.onclick = showWeekDays;
+
+
+            function showWeekDays() {
+
+                let number = document.getElementById('number').value;
+                let description = weekDays[number];
+                console.log(description);
+                console.log(number);
+            }
+        }
+
+        init();
+    </script>
+</body>
+
+</html>
